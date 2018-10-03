@@ -43,4 +43,8 @@ export default class FirebaseClient {
   get timestamp() {
     return firebaseAdmin.firestore.FieldValue.serverTimestamp()
   }
+
+  get fieldValue() {
+    return firebaseAdmin.firestore.FieldValue
+  }
 }
