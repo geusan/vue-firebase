@@ -40,6 +40,10 @@ export default class FirebaseClient {
     return firebase.firestore()
   }
 
+  get auth() {
+    return firebase.auth()
+  }
+
   get timestamp() {
     return firebaseAdmin.firestore.FieldValue.serverTimestamp()
   }
