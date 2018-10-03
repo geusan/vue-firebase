@@ -8,7 +8,7 @@ module.exports = {
   extends: 'airbnb-base',
   // *.vue 파일을 lint 하기위해서 필요함
   plugins: [
-    'vue'
+    'html'
   ],
   // 여기에 커스텀룰을 추가합니다.
   rules: {

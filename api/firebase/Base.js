@@ -1,5 +1,6 @@
 import * as firebase from 'firebase'
 import firebaseAdmin from 'firebase-admin'
+import config from './config'
 
 export default class FirebaseClient {
   constructor() {
@@ -11,7 +12,7 @@ export default class FirebaseClient {
   }
 
   static get CONFIG() {
-    return { apiKey: 'AIzaSyDH4RVrmWtt-BIJ2AIrUzr9sKHXQarbSmA', authDomain: 'geusanlab.firebaseapp.com', databaseURL: 'https://geusanlab.firebaseio.com', projectId: 'geusanlab', storageBucket: 'geusanlab.appspot.com', messagingSenderId: '472698496299' };
+    return config
   }
 
   static build() {
