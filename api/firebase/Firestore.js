@@ -1,6 +1,10 @@
 import Base from './Base';
 
 export default class Firestore extends Base {
+  static create() {
+    return new Firestore()
+  }
+
   ref(path) {
     const fields = path.split('/')
     let ref = this.firestore
@@ -20,7 +24,7 @@ export default class Firestore extends Base {
         .doc()
         .set({ ...data, timestamp: this.timestamp })
         .then((ref) => {
-          resolve(ref.id)
+          resolve(ref)
         })
         .catch((e) => {
           reject(e)
@@ -50,6 +54,9 @@ export default class Firestore extends Base {
       }
       tempRef.get()
         .then((list) => {
+          if (!list.docs) {
+            throw new Error('no data')
+          }
           resolve(list)
         })
         .catch((e) => {

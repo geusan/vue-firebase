@@ -1,5 +1,4 @@
 import * as firebase from 'firebase'
-import firebaseAdmin from 'firebase-admin'
 import config from './config'
 
 export default class FirebaseClient {
@@ -7,9 +6,9 @@ export default class FirebaseClient {
     FirebaseClient.build()
   }
 
-  static create() {
-    return new FirebaseClient()
-  }
+  // static create() {
+  //   return new FirebaseClient()
+  // }
 
   static get CONFIG() {
     return config
@@ -46,10 +45,10 @@ export default class FirebaseClient {
   }
 
   get timestamp() {
-    return firebaseAdmin.firestore.FieldValue.serverTimestamp()
+    return Date.now()
   }
 
   get fieldValue() {
-    return firebaseAdmin.firestore.FieldValue
+    return null
   }
 }
